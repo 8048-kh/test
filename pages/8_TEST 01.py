@@ -84,6 +84,8 @@ def CBS(df):
 def mpoint(Lat, Lon):
     return (np.average(Lat), np.average(Lon))
 
+data = load_data()
+
 row2_1, row2_2, row2_3 = st.columns((2, 2, 2))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
