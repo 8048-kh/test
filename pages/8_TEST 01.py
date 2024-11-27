@@ -23,7 +23,7 @@ import pydeck as pdk
 import streamlit as st
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
-st.set_page_config(layout="wide", page_title="NYC Ridesharing Demo", page_icon=":taxi:")
+st.set_page_config(layout="wide", page_title="KH bus stop map", page_icon=":taxi:")
 
 
 # LOAD DATA ONCE
@@ -76,11 +76,11 @@ def map(data, Lat, Lon, zoom):
         )
     )
 
-def CBS(df):
+def CBS (df):
     """Calculates the number of bus stops per town."""
-    return df.groupby("TOWNENG")["TOWNENG"].count().reset_index(name="BSC")
+    return df.groupby("TOWNENG")["TOWNENG"].count().rename("bus_stop_count").reset_index()
 
-def mpoint(Lat, Lon):
+def mpoint (Lat, Lon):
     return (np.average(Lat), np.average(Lon))
 
 data = load_data()
@@ -115,7 +115,7 @@ st.altair_chart(
     .mark_bar()
     .encode(
         x=alt.X("TOWNENG:N", title="區域"),
-        y=alt.Y("BSC:Q", title="公車站數量"),
+        y=alt.Y("bus_stop_count:Q", title="公車站數量"),
         tooltip=["TOWNENG", "bus_stop_count"],
     )
     .configure_mark(color="blue"),
