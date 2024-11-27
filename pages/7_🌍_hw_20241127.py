@@ -16,7 +16,6 @@
 """An example of showing geographic data."""
 
 import os
-
 import altair as alt
 import numpy as np
 import pandas as pd
@@ -45,7 +44,7 @@ def load_data():
         skiprows=1,  # don't read header since names specified directly
         usecols=[0, 1, 2],  # doesn't load last column, constant value "B02512"
         parse_dates=[
-            "date/time"
+            "TOWNENG"
         ],  # set as datetime instead of converting after the fact
     )
 
