@@ -102,24 +102,20 @@ with row2_3:
     st.write("**Qishan**")
     map(filterdata(data, Qishan[0], Qishan[1], zoom_level)
 
-# CALCULATING DATA FOR THE HISTOGRAM
-chart_data = histdata(data, hour_selected)
+chart_data = CBS(data)
 
-# LAYING OUT THE HISTOGRAM SECTION
-st.write(
-    f"""**Breakdown of rides per minute between {hour_selected}:00 and {(hour_selected + 1) % 24}:00**"""
-)
+st.write("**Bus Stop NUM**")
 
 st.altair_chart(
     alt.Chart(chart_data)
-    .mark_area(
-        interpolate="step-after",
-    )
+    .mark_bar()
     .encode(
-        x=alt.X("minute:Q", scale=alt.Scale(nice=False)),
-        y=alt.Y("pickups:Q"),
-        tooltip=["minute", "pickups"],
+        x=alt.X("TOWNENG:N", title="區域"),
+        y=alt.Y("bus_stop_count:Q", title="公車站數量"),
+        tooltip=["TOWNENG", "bus_stop_count"],
     )
-    .configure_mark(opacity=0.2, color="red"),
+    .configure_mark(color="blue"),
     use_container_width=True,
 )
+
+
