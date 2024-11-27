@@ -30,7 +30,7 @@ st.set_page_config(layout="wide", page_title="NYC Ridesharing Demo", page_icon="
 # LOAD DATA ONCE
 @st.cache_resource
 def load_data():
-    path = "hualien%20convenience%20stores.csv.csv.gz"
+    path = "Kaohsiung%20Bus%20Stop.csv.gz"
     if not os.path.isfile(path):
         path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/{path}"
     
@@ -38,9 +38,9 @@ def load_data():
         path,
         nrows=100000,  # approx. 10% of data
         names=[
-            "date/time",
-            "lat",
-            "lon",
+            "TOWNENG",
+            "Lat",
+            "Lon",
         ],  # specify names directly since they don't change
         skiprows=1,  # don't read header since names specified directly
         usecols=[0, 1, 2],  # doesn't load last column, constant value "B02512"
@@ -53,13 +53,13 @@ def load_data():
 
 
 # FUNCTION FOR AIRPORT MAPS
-def map(data, lat, lon, zoom):
+def map(data, Lat, Lon, zoom):
     st.write(
         pdk.Deck(
             map_style="mapbox://styles/mapbox/light-v9",
             initial_view_state={
-                "latitude": lat,
-                "longitude": lon,
+                "latitude": Lat,
+                "longitude": Lon,
                 "zoom": zoom,
                 "pitch": 50,
             },
@@ -67,7 +67,7 @@ def map(data, lat, lon, zoom):
                 pdk.Layer(
                     "HexagonLayer",
                     data=data,
-                    get_position=["lon", "lat"],
+                    get_position=["Lon", "Lat"],
                     radius=100,
                     elevation_scale=4,
                     elevation_range=[0, 1000],
