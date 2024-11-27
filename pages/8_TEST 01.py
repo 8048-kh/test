@@ -78,7 +78,7 @@ def map(data, Lat, Lon, zoom):
 
 def CBS(df):
     """Calculates the number of bus stops per town."""
-    return df.groupby("TOWNENG")["TOWNENG"].count().reset_index(name="bus_stop_count")
+    return df.groupby("TOWNENG")["TOWNENG"].count().reset_index(name="BSC")
 
 def mpoint(Lat, Lon):
     return (np.average(Lat), np.average(Lon))
