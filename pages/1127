@@ -30,9 +30,9 @@ st.set_page_config(layout="wide", page_title="NYC Ridesharing Demo", page_icon="
 # LOAD DATA ONCE
 @st.cache_resource
 def load_data():
-    path = "uber-raw-data-sep14.csv.gz"
+    path = "population%20indicators%20in%20June%202024.csv.gz"
     if not os.path.isfile(path):
-        path = f"https://github.com/streamlit/demo-uber-nyc-pickups/raw/main/{path}"
+        path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/{path}"
 
     data = pd.read_csv(
         path,
