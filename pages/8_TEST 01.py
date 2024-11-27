@@ -81,6 +81,9 @@ def CBS(df):
     """Calculates the number of bus stops per town."""
     return df.groupby("TOWNENG")["TOWNENG"].count().reset_index(name="bus_stop_count")
 
+def mpoint(Lat, Lon):
+    return (np.average(Lat), np.average(Lon))
+
 row2_1, row2_2, row2_3 = st.columns((2, 2, 2))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
