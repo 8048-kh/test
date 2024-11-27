@@ -79,23 +79,23 @@ def map(data, Lat, Lon, zoom):
 
 
 # FILTER DATA FOR A SPECIFIC HOUR, CACHE
-@st.cache_data
-def filterdata(df, hour_selected):
-    return df[df["date/time"].dt.hour == hour_selected]
+#@st.cache_data
+#def filterdata(df, hour_selected):
+  #  return df[df["date/time"].dt.hour == hour_selected]
 
 
 # CALCULATE MIDPOINT FOR GIVEN SET OF DATA
 @st.cache_data
-def mpoint(lat, lon):
-    return (np.average(lat), np.average(lon))
+def mpoint(Lat, Lon):
+    return (np.average(Lat), np.average(Lon))
 
 
 # FILTER DATA BY HOUR
-@st.cache_data
-def histdata(df, hr):
-    filtered = data[
-        (df["date/time"].dt.hour >= hr) & (df["date/time"].dt.hour < (hr + 1))
-    ]
+#@st.cache_data
+#def histdata(df, hr):
+#    filtered = data[
+#        (df["date/time"].dt.hour >= hr) & (df["date/time"].dt.hour < (hr + 1))
+#    ]
 
     hist = np.histogram(filtered["date/time"].dt.minute, bins=60, range=(0, 60))[0]
 
