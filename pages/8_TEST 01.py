@@ -34,8 +34,7 @@ def load_data():
         path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/{path}"
     
     data = pd.read_csv(
-        path,
-        nrows=100000,  # approx. 10% of data
+        path, # approx. 10% of data
         names=[
             "TOWNENG",
             "Lat",
