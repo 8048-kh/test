@@ -96,11 +96,11 @@ with row2_1:
 
 with row2_2:
     st.write("**Gangshan**")
-    map(filterdata(data, Gangshan[0], Gangshan[1], zoom_level)
+    map(data, Gangshan[0], Gangshan[1], zoom_level)
 
 with row2_3:
     st.write("**Qishan**")
-    map(filterdata(data, Qishan[0], Qishan[1], zoom_level)
+    map(data, Qishan[0], Qishan[1], zoom_level)
 
 chart_data = CBS(data)
 
