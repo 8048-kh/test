@@ -78,41 +78,13 @@ def map(data, Lat, Lon, zoom):
     )
 
 
-# FILTER DATA FOR A SPECIFIC HOUR, CACHE
-
-
-
-# CALCULATE MIDPOINT FOR GIVEN SET OF DATA
-@st.cache_data
-def mpoint(Lat, Lon):
-    return (np.average(Lat), np.average(Lon))
-
-
-
-
-    hist = np.histogram(filtered["date/time"].dt.minute, bins=60, range=(0, 60))[0]
-
-    return pd.DataFrame({"minute": range(60), "pickups": hist})
-
-
-# STREAMLIT APP LAYOUT
-data = load_data()
-
-
-# IF THE SLIDER CHANGES, UPDATE THE QUERY PARAM
-def update_query_params():
-    hour_selected = st.session_state["pickup_hour"]
-    st.query_params["pickup_hour"] = hour_selected
-
-# LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
 row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
-la_guardia = [40.7900, -73.8700]
-jfk = [40.6650, -73.7821]
-newark = [40.7090, -74.1805]
+Gangshan = [22.792234, 120.299717]
+Qishan = [22.883892, 120.484421]
 zoom_level = 12
-midpoint = mpoint(data["lat"], data["lon"])
+midpoint = mpoint(data["Lat"], data["Lon"])
 
 with row2_1:
     st.write(
