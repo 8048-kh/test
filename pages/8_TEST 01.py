@@ -77,6 +77,9 @@ def map(data, Lat, Lon, zoom):
         )
     )
 
+def CBS(df):
+    """Calculates the number of bus stops per town."""
+    return df.groupby("TOWNENG")["TOWNENG"].count().reset_index(name="bus_stop_count")
 
 row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
 
@@ -88,7 +91,7 @@ midpoint = mpoint(data["Lat"], data["Lon"])
 
 with row2_1:
     st.write(
-        f"""**All New York City from {hour_selected}:00 and {(hour_selected + 1) % 24}:00**"""
+        f"""**All BUS STOP IN KH CITY"""
     )
     map(filterdata(data, hour_selected), midpoint[0], midpoint[1], 11)
 
