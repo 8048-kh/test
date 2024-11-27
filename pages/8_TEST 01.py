@@ -115,7 +115,7 @@ st.altair_chart(
     .mark_bar()
     .encode(
         x=alt.X("TOWNENG:N", title="區域"),
-        y=alt.Y("bus_stop_count:Q", title="公車站數量"),
+        y=alt.Y("BSC:Q", title="公車站數量"),
         tooltip=["TOWNENG", "bus_stop_count"],
     )
     .configure_mark(color="blue"),
