@@ -81,7 +81,7 @@ def CBS(df):
     """Calculates the number of bus stops per town."""
     return df.groupby("TOWNENG")["TOWNENG"].count().reset_index(name="bus_stop_count")
 
-row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
+row2_1, row2_2, row2_3 = st.columns((2, 2, 2))
 
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
 Gangshan = [22.792234, 120.299717]
@@ -90,22 +90,17 @@ zoom_level = 12
 midpoint = mpoint(data["Lat"], data["Lon"])
 
 with row2_1:
-    st.write(
-        f"""**All BUS STOP IN KH CITY"""
-    )
-    map(filterdata(data, hour_selected), midpoint[0], midpoint[1], 11)
+    st.write("**高雄市所有公車站**")  
+    map(data, midpoint[0], midpoint[1], 11)
+
 
 with row2_2:
-    st.write("**La Guardia Airport**")
-    map(filterdata(data, hour_selected), la_guardia[0], la_guardia[1], zoom_level)
+    st.write("**Gangshan**")
+    map(filterdata(data, Gangshan[0], Gangshan[1], zoom_level)
 
 with row2_3:
-    st.write("**JFK Airport**")
-    map(filterdata(data, hour_selected), jfk[0], jfk[1], zoom_level)
-
-with row2_4:
-    st.write("**Newark Airport**")
-    map(filterdata(data, hour_selected), newark[0], newark[1], zoom_level)
+    st.write("**Qishan**")
+    map(filterdata(data, Qishan[0], Qishan[1], zoom_level)
 
 # CALCULATING DATA FOR THE HISTOGRAM
 chart_data = histdata(data, hour_selected)
