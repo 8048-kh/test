@@ -30,10 +30,10 @@ st.set_page_config(layout="wide", page_title="NYC Ridesharing Demo", page_icon="
 # LOAD DATA ONCE
 @st.cache_resource
 def load_data():
-    path = "population%20indicators%20in%20June%202024.csv.gz"
+    path = "hualien%20convenience%20stores.csv.csv.gz"
     if not os.path.isfile(path):
-        path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/{path}"
-
+        path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/{path}"
+    
     data = pd.read_csv(
         path,
         nrows=100000,  # approx. 10% of data
