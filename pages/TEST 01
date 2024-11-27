@@ -79,9 +79,7 @@ def map(data, Lat, Lon, zoom):
 
 
 # FILTER DATA FOR A SPECIFIC HOUR, CACHE
-#@st.cache_data
-#def filterdata(df, hour_selected):
-  #  return df[df["date/time"].dt.hour == hour_selected]
+
 
 
 # CALCULATE MIDPOINT FOR GIVEN SET OF DATA
@@ -90,12 +88,7 @@ def mpoint(Lat, Lon):
     return (np.average(Lat), np.average(Lon))
 
 
-# FILTER DATA BY HOUR
-#@st.cache_data
-#def histdata(df, hr):
-#    filtered = data[
-#        (df["date/time"].dt.hour >= hr) & (df["date/time"].dt.hour < (hr + 1))
-#    ]
+
 
     hist = np.histogram(filtered["date/time"].dt.minute, bins=60, range=(0, 60))[0]
 
@@ -105,20 +98,6 @@ def mpoint(Lat, Lon):
 # STREAMLIT APP LAYOUT
 data = load_data()
 
-# LAYING OUT THE TOP SECTION OF THE APP
-row1_1, row1_2 = st.columns((2, 3))
-
-# SEE IF THERE'S A QUERY PARAM IN THE URL (e.g. ?pickup_hour=2)
-# THIS ALLOWS YOU TO PASS A STATEFUL URL TO SOMEONE WITH A SPECIFIC HOUR SELECTED,
-# E.G. https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/main?pickup_hour=2
-if not st.session_state.get("url_synced", False):
-    try:
-        pickup_hour = int(st.query_params["pickup_hour"])
-        st.session_state["pickup_hour"] = pickup_hour
-        st.session_state["url_synced"] = True
-    except KeyError:
-        pass
-
 
 # IF THE SLIDER CHANGES, UPDATE THE QUERY PARAM
 def update_query_params():
@@ -126,14 +105,10 @@ def update_query_params():
     st.query_params["pickup_hour"] = hour_selected
 
 
-with row1_1:
-    st.title("NYC Uber Ridesharing Data")
-    hour_selected = st.slider(
-        "Select hour of pickup", 0, 23, key="pickup_hour", on_change=update_query_params
-    )
 
 
-with row1_2:
+
+row1:
     st.write(
         """
     ##
