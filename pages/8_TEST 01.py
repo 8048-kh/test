@@ -104,19 +104,6 @@ def update_query_params():
     hour_selected = st.session_state["pickup_hour"]
     st.query_params["pickup_hour"] = hour_selected
 
-
-
-
-
-row1:
-    st.write(
-        """
-    ##
-    Examining how Uber pickups vary over time in New York City's and at its major regional airports.
-    By sliding the slider on the left you can view different slices of time and explore different transportation trends.
-    """
-    )
-
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
 row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
 
