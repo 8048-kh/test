@@ -76,7 +76,7 @@ data = load_data()
 # LAYING OUT THE TOP SECTION OF THE APP
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
-row1 = st.columns()row2_1, row2_2, row2_3 = st.columns((2, 2, 2))
+row2_1, row2_2, row2_3 = st.columns((2, 2, 2))
 # SETTING THE ZOOM LOCATIONS FOR THE AIRPORTS
 Kaohsiung_Main_Station = [22.638855, 120.302974]
 Zuoying = [22.688219, 120.308271]
