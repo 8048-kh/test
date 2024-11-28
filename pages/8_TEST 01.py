@@ -29,21 +29,21 @@ st.set_page_config(layout="wide", page_title="KH bus stop map", page_icon=":taxi
 # LOAD DATA ONCE
 @st.cache_resource
 def load_data():
-    path = "Kaohsiung%20Bus%20Stop.csv.gz"
+    path = "kh mrt.csv.gz"
     if not os.path.isfile(path):
-        path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/{path}"
+        path = f"https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/path}"
     
     data = pd.read_csv(
         path, # approx. 10% of data
         names=[
-            "TOWNENG",
+            "stat eng",
             "Lat",
             "Lon",
         ],  # specify names directly since they don't change
         skiprows=1,  # don't read header since names specified directly
         usecols=[0, 1, 2],  # doesn't load last column, constant value "B02512"
         parse_dates=[
-            "TOWNENG"
+            "stat eng"
         ],  # set as datetime instead of converting after the fact
     )
 
@@ -114,7 +114,7 @@ st.altair_chart(
     alt.Chart(chart_data)
     .mark_bar()
     .encode(
-        x=alt.X("TOWNENG:N", title="區域"),
+        x=alt.X("stat eng:N", title="Station"),
         y=alt.Y("bus_stop_count:Q", title="公車站數量"),
         tooltip=["TOWNENG", "bus_stop_count"],
     )
