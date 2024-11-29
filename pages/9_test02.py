@@ -9,7 +9,6 @@ A Streamlit map template
 """
 
 st.sidebar.info(markdown)
-debris = "https://github.com/8048-kh/test/blob/main/debris.geojson"
 
 
 st.title("Split-panel Map")
@@ -18,7 +17,8 @@ with st.expander("See source code"):
     with st.echo():
         m = leafmap.Map()
         m.split_map(
-            left_layer="debris", right_layer="ESA WorldCover 2020"
+            left_layer="https://github.com/8048-kh/test/blob/main/debris.geojson", 
+            right_layer="ESA WorldCover 2020"
         )
         m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
 
