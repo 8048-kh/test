@@ -20,7 +20,7 @@ with st.expander("See source code"):
         Tribes = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
         debris = "https://github.com/8048-kh/test/blob/main/debris.geojson"
 
-         m.add_geojson(debris, layer_name="debris")
+        m.add_geojson(debris, layer_name="debris")
         m.add_points_from_xy(
             Tribes,
             x="經度",
