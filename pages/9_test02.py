@@ -17,11 +17,17 @@ st.title("Split-panel Map")
 
 with st.expander("See source code"):
     with st.echo():
-        m = leafmap.Map()
+        m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
+        debris = "https://github.com/8048-kh/test/raw/refs/heads/main/debris1736_20240611_twd97_UTF8.shp"
+        Route = "https://github.com/8048-kh/test/raw/refs/heads/main/Bus%20Route.shp"
+
+        m.add_shp(Route, layer_name="Route")
+        m.add_shp(debris, layer_name="debris")
         m.split_map(
-            left_layer="ESA WorldCover 2020 S2 FCC",
-            right_layer="ESA WorldCover 2020"
+            left_layer="debris",
+            right_layer="Route"
         )
-        m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
+        m.add_legend(title="debris", builtin_legend="Route")
 
 m.to_streamlit(height=700)
+
