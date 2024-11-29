@@ -27,7 +27,7 @@ with st.expander("See source code"):
             cities,
             x="longitude",
             y="latitude",
-            color_column="regions",
+            #color_column="regions",
             icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
             add_legend=True,
