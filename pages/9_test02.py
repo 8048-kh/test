@@ -25,7 +25,7 @@ with st.expander("See source code"):
             left_layer = "https://github.com/8048-kh/test/raw/refs/heads/main/debris1736_20240611_twd97_UTF8.shp",
             right_layer = "https://github.com/8048-kh/test/raw/refs/heads/main/Bus%20Route.shp"
         )
-        m.add_legend(title="debris", builtin_legend="Route")
+       # m.add_legend(title="debris", builtin_legend="Route")
 
 m.to_streamlit(height=700)
 
