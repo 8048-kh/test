@@ -15,7 +15,7 @@ st.title("Split-panel Map")
 with st.expander("See source code"):
     with st.echo():
         
-        m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
+        m = leafmap.Map()
         debris = "https://github.com/8048-kh/test/raw/refs/heads/main/debris1736_20240611_twd97_UTF8.shp"
         Route = "https://github.com/8048-kh/test/raw/refs/heads/main/Bus%20Route.shp"
 
