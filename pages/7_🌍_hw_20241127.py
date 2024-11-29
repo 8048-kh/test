@@ -20,7 +20,7 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[40, -100], zoom=4)
         cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
-        regions = "https://github.com/8048-kh/test/blob/main/county.geojson"
+        regions = "https://github.com/8048-kh/test/blob/c86ae0b27d95b967c9adc8a9355a50075d70d037/county.geojson"
 
         m.add_geojson(regions, layer_name="county")
         m.add_points_from_xy(
