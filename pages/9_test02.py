@@ -23,8 +23,8 @@ with st.expander("See source code"):
         m.add_geojson(layer_name="Aboriginal Tribes")
         m.add_points_from_xy(
             Tribes,
-            x="X座標",
-            y="Y座標",
+            x="經度",
+            y="緯度",
             color_column="部落傳統名制_羅馬拼音",
             #icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
