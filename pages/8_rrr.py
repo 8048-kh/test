@@ -19,7 +19,7 @@ with st.expander("See source code"):
     with st.echo():
         m = leafmap.Map()
         m.split_map(
-            left_layer="Ehttps://github.com/8048-kh/Minbakiu-Bridge/raw/refs/heads/main/09-07-colab.tif",
+            left_layer="https://github.com/8048-kh/Minbakiu-Bridge/raw/refs/heads/main/09-07-colab.tif",
             right_layer="https://github.com/8048-kh/Minbakiu-Bridge/raw/refs/heads/main/09-17-colab.tif"
         )
         m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
