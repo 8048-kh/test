@@ -14,16 +14,14 @@ st.title("Split-panel Map")
 
 with st.expander("See source code"):
     with st.echo():
-        
-        m = leafmap.Map()
         debris = "https://github.com/8048-kh/test/raw/refs/heads/main/debris1736_20240611_twd97_UTF8.shp"
-        Route = "https://github.com/8048-kh/test/raw/refs/heads/main/Bus%20Route.shp"
-
+        Route = "https://github.com/8048-kh/test/raw/refs/heads/main/Bus%20Route.shp"       
+        m = leafmap.Map()
         m.add_shp(Route, layer_name="Route")
         m.add_shp(debris, layer_name="debris")
         m.split_map(
-            left_layer = "https://github.com/8048-kh/test/raw/refs/heads/main/debris1736_20240611_twd97_UTF8.shp",
-            right_layer = "https://github.com/8048-kh/test/raw/refs/heads/main/Bus%20Route.shp"
+            left_layer = "debris",
+            right_layer = "Route"
         )
        # m.add_legend(title="debris", builtin_legend="Route")
 
