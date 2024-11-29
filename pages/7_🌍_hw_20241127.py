@@ -27,7 +27,7 @@ with st.expander("See source code"):
             cities,
             x="longitude",
             y="latitude",
-            color_column="縣市",
+            #color_column="縣市",
             icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
             add_legend=True,
