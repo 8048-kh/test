@@ -8,18 +8,27 @@ A Streamlit map template
 <https://github.com/opengeos/streamlit-map-template>
 """
 
+st.sidebar.title("About")
 st.sidebar.info(markdown)
 
-
-st.title("Split-panel Map")
+st.title("Marker Cluster")
 
 with st.expander("See source code"):
     with st.echo():
-        m = leafmap.Map()
-        m.split_map(
-            left_layer="https://github.com/8048-kh/test/blob/main/debris.geojson", 
-            right_layer="ESA WorldCover 2020"
+
+        m = leafmap.Map(center=[40, -100], zoom=4)
+        Tribes = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
+        debris = "https://github.com/8048-kh/test/blob/main/debris.geojson"
+
+        m.add_geojson(regions, layer_name="Aboriginal Tribes")
+        m.add_points_from_xy(
+            Tribes,
+            x="longitude",
+            y="latitude",
+            color_column="部落傳統名制_羅馬拼音",
+            icon_names=["gear", "map", "leaf", "globe"],
+            spin=True,
+            add_legend=True,
         )
-        m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
 
 m.to_streamlit(height=700)
