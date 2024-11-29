@@ -20,14 +20,14 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[40, -100], zoom=4)
         cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
-        regions = "https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/us_regions.geojson"
+        regions = "https://github.com/8048-kh/test/blob/main/county.geojson"
 
         m.add_geojson(regions, layer_name="US Regions")
         m.add_points_from_xy(
             cities,
             x="longitude",
             y="latitude",
-            #color_column="County",
+            color_column="County",
             icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
             add_legend=True,
