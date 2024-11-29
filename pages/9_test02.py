@@ -26,7 +26,7 @@ with st.expander("See source code"):
             x="longitude",
             y="latitude",
             color_column="部落傳統名制_羅馬拼音",
-            icon_names=["gear", "map", "leaf", "globe"],
+            #icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
             add_legend=True,
         )
