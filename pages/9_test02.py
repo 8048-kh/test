@@ -18,9 +18,9 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[40, -100], zoom=4)
         Tribes = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
-        #debris = "https://github.com/8048-kh/test/blob/main/debris.geojson"
+        debris = "https://github.com/8048-kh/test/blob/main/debris.geojson"
 
-        m.add_geojson(layer_name="Tribes")
+         m.add_geojson(debris, layer_name="debris")
         m.add_points_from_xy(
             Tribes,
             x="經度",
