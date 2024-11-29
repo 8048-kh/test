@@ -17,7 +17,7 @@ st.title("Heatmap")
 
 with st.expander("See source code"):
     with st.echo():
-        filepath = "https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/Kaohsiung%20Bus%20Stop.csv"
+        filepath = "https://github.com/8048-kh/GIS-files/raw/refs/heads/main/CSV/2.csv"
         m = leafmap.Map(center=[40, -100], zoom=4)
         m.add_heatmap(
             filepath,
