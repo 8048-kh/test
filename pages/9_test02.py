@@ -24,8 +24,8 @@ with st.expander("See source code"):
         m.add_shp(Route, layer_name="Route")
         m.add_shp(debris, layer_name="debris")
         m.split_map(
-            left_layer="debris",
-            right_layer="Route"
+            left_layer = debris,
+            right_layer = Route 
         )
         m.add_legend(title="debris", builtin_legend="Route")
 
