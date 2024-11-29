@@ -19,7 +19,7 @@ with st.expander("See source code"):
     with st.echo():
 
         m = leafmap.Map(center=[40, -100], zoom=4)
-        cities = "https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/us_cities.csv"
+        cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
         regions = "https://github.com/8048-kh/GIS-files/raw/refs/heads/main/Polygon/county/%E8%A1%8C%E6%94%BF%E5%8D%80.shp"
 
         m.add_shp(regions, layer_name="US Regions")
