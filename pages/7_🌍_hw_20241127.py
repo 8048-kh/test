@@ -22,7 +22,7 @@ with st.expander("See source code"):
         cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
         regions = "https://github.com/8048-kh/test/blob/main/county.geojson"
 
-        m.add_geojson(regions, layer_name="US Regions")
+        m.add_geojson(regions, layer_name="county")
         m.add_points_from_xy(
             cities,
             x="longitude",
