@@ -14,7 +14,7 @@ with st.expander("See source code"):
     with st.echo():
 
         m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
-        cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes.csv"
+        cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv"
         regions = "https://github.com/8048-kh/test/raw/refs/heads/main/REGION.shp"
 
         m.add_shp(regions, layer_name="Aboriginal Tribes")
