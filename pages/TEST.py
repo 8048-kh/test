@@ -22,7 +22,7 @@ with st.expander("See source code"):
             cities,
             x="longitude",
             y="latitude",
-            color_column="region",
+            color_column="族別",
             icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
             add_legend=True,
