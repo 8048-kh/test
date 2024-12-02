@@ -15,7 +15,7 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
         cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv"
-        regions = "https://github.com/8048-kh/test/raw/refs/heads/main/population.shp"
+        regions = "https://github.com/8048-kh/test/raw/refs/heads/main/tw%20population.shp"
 
         m.add_shp(regions, layer_name="Aboriginal Tribes")
         m.add_points_from_xy(
