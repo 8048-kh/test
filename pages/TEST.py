@@ -18,14 +18,14 @@ with st.expander("See source code"):
         regions = "https://github.com/8048-kh/test/raw/refs/heads/main/pop/ppoopp.shp"
 
         m.add_shp(regions, layer_name="Aboriginal Tribes")
-        #m.add_points_from_xy(
-            #cities,
-            #x="longitude",
-            #y="latitude",
+        m.add_points_from_xy(
+            cities,
+            x="longitude",
+            y="latitude",
             #color_column="region",
-            #icon_names=["gear", "map", "leaf", "globe"],
-            #spin=True,
-            #add_legend=True,
-        #)
+            icon_names=["gear", "map", "leaf", "globe"],
+            spin=True,
+            add_legend=True,
+        )
 
 m.to_streamlit(height=700)
