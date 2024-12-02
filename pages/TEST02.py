@@ -23,7 +23,7 @@ with st.expander("See source code"):
             lotus,
             latitude="Y",
             longitude="X",
-            value="pop_max",
+            value="Area",
             name="Heat map",
             radius=20,
         )
