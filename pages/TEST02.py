@@ -17,10 +17,11 @@ st.title("Heatmap")
 
 with st.expander("See source code"):
     with st.echo():
-        filepath = "https://github.com/8048-kh/test/raw/refs/heads/main/population/Population.shp"
+        pop = "https://github.com/8048-kh/test/raw/refs/heads/main/population/Population.shp"
+        m.add_shp(regions, layer_name="Population")
         m = leafmap.Map(center=[40, -100], zoom=4)
         m.add_heatmap(
-            filepath,
+            pop,
             latitude="latitude",
             longitude="longitude",
             value="P_CNT",
