@@ -21,8 +21,8 @@ with st.expander("See source code"):
         m = leafmap.Map(center=[40, -100], zoom=4)
         m.add_heatmap(
             lotus,
-            latitude="Y",
-            longitude="X",
+            latitude="X",
+            longitude="Y",
             value="Area",
             name="Heat map",
             radius=20,
