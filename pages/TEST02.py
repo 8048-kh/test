@@ -17,13 +17,13 @@ st.title("Heatmap")
 
 with st.expander("See source code"):
     with st.echo():
-        lotus = "https://github.com/8048-kh/test/raw/refs/heads/main/Lotus.csv"
+        lotus = "https://github.com/8048-kh/test/raw/refs/heads/main/Spot.csv"
         m = leafmap.Map(center=[40, -100], zoom=4)
         m.add_heatmap(
             lotus,
-            latitude="X",
-            longitude="Y",
-            value="Area",
+            latitude="Py",
+            longitude="Px",
+            value="Zipcode",
             name="Heat map",
             radius=20,
         )
