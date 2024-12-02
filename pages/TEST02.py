@@ -21,7 +21,6 @@ with st.expander("See source code"):
         m.add_shp(regions, layer_name="Population")
         m = leafmap.Map(center=[40, -100], zoom=4)
         m.add_heatmap(
-            pop,
             latitude="latitude",
             longitude="longitude",
             value="P_CNT",
