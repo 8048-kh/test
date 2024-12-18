@@ -35,21 +35,21 @@ with st.expander("See source code"):
         m.center = (latitude, longitude)  
 
 # Display the updated map and selected tribe
-        m.to_streamlit(height=15)
+m.to_streamlit(height=15)
 
 # Display the selected tribe
         st.write(f"您選擇的部落是：{selected_tribe}")
         
 
-        m.add_shp(regions, layer_name="Aboriginal Tribes")
-        m.add_points_from_xy(
-            cities,
-            x="longitude",
-            y="latitude",
-            color_column="region",
-            icon_names=["gear", "map", "leaf", "globe"],
-            spin=True,
-            add_legend=True,
-        )
+#        m.add_shp(regions, layer_name="Aboriginal Tribes")
+#        m.add_points_from_xy(
+#            cities,
+#            x="longitude",
+#            y="latitude",
+#            color_column="region",
+#            icon_names=["gear", "map", "leaf", "globe"],
+#            spin=True,
+#            add_legend=True,
+#        )
 
-m.to_streamlit(height=700)
+#m.to_streamlit(height=700)
