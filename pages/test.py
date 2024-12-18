@@ -21,6 +21,7 @@ with st.expander("See source code"):
         tribe_names = cities_df['部落名稱'].tolist()
 
 # Create a selectbox for tribe names
+        with row2_1:
         selected_tribe = st.selectbox(
             "選擇部落",  # Label for the selectbox
             tribe_names,  # Options for the selectbox (tribe names)
