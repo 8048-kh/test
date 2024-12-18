@@ -11,8 +11,8 @@ A Streamlit map template
 
 st.title("Aboriginal Tribes")
 
-#with st.expander("See source code"):
-   # with st.echo():
+with st.expander("See source code"):
+    with st.echo():
 
         m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
         cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv"
