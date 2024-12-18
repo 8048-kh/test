@@ -31,7 +31,7 @@ longitude = selected_tribe_data['longitude']
 
 # Update map center
 m.center = (latitude, longitude)  
-
+m.zoom = 12
 # Display the updated map and selected tribe
 m.to_streamlit(height=700)
 
