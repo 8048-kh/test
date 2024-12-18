@@ -35,7 +35,7 @@ with st.expander("See source code"):
         m.center = (latitude, longitude)  
 
 # Display the updated map and selected tribe
-        m.to_streamlit(height=700)
+        m.to_streamlit(height=15)
 
 # Display the selected tribe
         st.write(f"您選擇的部落是：{selected_tribe}")
