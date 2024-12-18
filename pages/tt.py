@@ -33,7 +33,7 @@ longitude = selected_tribe_data['longitude']
 m.center = (latitude, longitude)  
 
 # Display the updated map and selected tribe
-m.to_streamlit(height=15)
+m.to_streamlit(height=700)
 
 # Display the selected tribe
 st.write(f"您選擇的部落是：{selected_tribe}")
