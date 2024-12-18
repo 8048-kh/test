@@ -17,7 +17,7 @@ with st.expander("See source code"):
         m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
         cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv"
         regions = "https://github.com/8048-kh/test/raw/refs/heads/main/REGION.shp"
-        cities_df = pd.read_csv(cities_url)
+        cities_df = pd.read_csv(https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv)
         tribe_names = cities_df['部落名稱'].tolist()
 
 # Create a selectbox for tribe names
